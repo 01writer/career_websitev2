@@ -24,11 +24,9 @@ JOBS = [{
 def hello_world():
   return render_template('home.html', jobs=JOBS, company_name='Webbullz')
 
-
 @app.route('/api')
 def list_job():
   return jsonify(JOBS)
-
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)
