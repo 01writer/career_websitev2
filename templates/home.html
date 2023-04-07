@@ -14,10 +14,10 @@
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+      <img id="banner" class="img-fluid" src="static/banner.jpg">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">Career Portal For {{company_name}}</h1>
-    <img id="banner" class="img-fluid" src="static/banner.jpg">
-    <h2 class="text-center mt-2 mb-4">About</h2>
     <p class="lead">Convallis suspendisse praesent porttitor nisl, nulla tellus mattis facilisi. A litora nullam risus posuere. Dui amet mus mus. Fermentum pharetra lacus a nulla. Dolor, habitasse euismod at! Nisl semper litora dictum varius; vehicula cubilia sit commodo! Leo class varius leo imperdiet nunc adipiscing condimentum nisi proin feugiat. Platea duis lorem accumsan consectetur aliquet; ultricies praesent imperdiet volutpat tortor laoreet nunc? Cras facilisis conubia mattis malesuada varius ridiculus tristique laoreet tincidunt euismod magnis. Massa semper dictumst luctus, luctus!
 </p>
     <h3 class="text-center mt-2 mb-4">Job Opening</h3>
@@ -29,5 +29,6 @@
     <button class="btn btn-outline-primary">Contact Us</button>
       <p class="text-center mt-4 mt-2">© 2023 Career & Co. All rights reserved.</p>
       </div>
+    {% include 'footer.html' %}
   </body>
 </html>
