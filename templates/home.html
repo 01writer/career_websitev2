@@ -18,15 +18,22 @@
       <img id="banner" class="img-fluid" src="static/banner.jpg">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">Career Portal For {{company_name}}</h1>
+      <div class='row'>
+        <div class='col-6'>
     <p class="lead">Convallis suspendisse praesent porttitor nisl, nulla tellus mattis facilisi. A litora nullam risus posuere. Dui amet mus mus. Fermentum pharetra lacus a nulla. Dolor, habitasse euismod at! Nisl semper litora dictum varius; vehicula cubilia sit commodo! Leo class varius leo imperdiet nunc adipiscing condimentum nisi proin feugiat. Platea duis lorem accumsan consectetur aliquet; ultricies praesent imperdiet volutpat tortor laoreet nunc? Cras facilisis conubia mattis malesuada varius ridiculus tristique laoreet tincidunt euismod magnis. Massa semper dictumst luctus, luctus!
-</p>
-    <h3 class="text-center mt-2 mb-4">Job Opening</h3>
+</p></div> <div class='col-6'> 
+<img src='/static/career_banner.jpg' class='rounded'>
+</div>
+      
+      </div>
+    <h3 class="text-center mt-4 mb-4">Job Opening</h3>
      <div style="margin-bottom:30px">
        {% for job in jobs %}
        {% include 'jobitem.html' %}
        {% endfor %}
      </div>
-    <button class="btn btn-outline-primary">Contact Us</button>
+      <div class='text-center'>
+    <a href='mailto:contact@webbullz.com?subject=Want%20to%20know%20more%20about%20vacancy' target="_blank" class="btn btn-outline-primary">Contact Us</a></div>
       <p class="text-center mt-4 mt-2">© 2023 Career & Co. All rights reserved.</p>
       </div>
     {% include 'footer.html' %}
