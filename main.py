@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import get_data_from_db
+from database import get_data_from_db, load_job
 
 app = Flask(__name__)
 
@@ -26,10 +26,22 @@ def hello_world():
   JOBS = get_data_from_db()
   return render_template('home.html', jobs=JOBS, company_name='Webbullz')
 
+
 @app.route('/api')
 def list_job():
   JOBS = get_data_from_db()
   return jsonify(JOBS)
+
+
+@app.route('/jobs/<id>')
+def get_job_description(id):
+  job_disc = load_job(id)
+  print(type(job_disc))
+  print(job_disc)
+  # if not job_disc:
+  #   return "Not Found"
+  return render_template('job_page.html', job=job_disc)
+
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)

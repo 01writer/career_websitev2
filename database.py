@@ -9,6 +9,7 @@ engine = create_engine(db_connection_cred,
                          "ssl_ca": "/etc/ssl/cert.pem"
                        }})
 
+
 #executing SQL query to get data from planetscale database
 def get_data_from_db():
   with engine.connect() as con:
@@ -18,3 +19,15 @@ def get_data_from_db():
     for result in result_all:
       job_data_in_dict.append(result._asdict())
   return job_data_in_dict
+
+
+def load_job(id):
+  with engine.connect() as conn:
+    result = conn.execute(text('select * from jobs WHERE id = :ids'),
+                          {"ids": id})
+    row = result.all()
+    if len(row) == 0:
+      return None
+    else:
+      jobdis = row[0]._asdict()
+      return jobdis
