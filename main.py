@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from database import get_data_from_db, load_job
 
 app = Flask(__name__)
@@ -41,6 +41,12 @@ def get_job_description(id):
   # if not job_disc:
   #   return "Not Found"
   return render_template('job_page.html', job=job_disc)
+
+
+@app.route('/job/<id>/apply', method=['post'])
+def get_applicant_details(id):
+  data = request.form
+  return jsonify(data)
 
 
 if __name__ == "__main__":

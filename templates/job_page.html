@@ -31,7 +31,10 @@
         {% endfor %}
       </ol>
       <h4>Salary: </h4>{{job.currency}}{{job['salary']}}
-    </div>
+   
+    <div>
+      {% include 'application.html' %}
+    </div> </div>
       {% include 'footer.html' %}
   </body>
 </html>
