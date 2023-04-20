@@ -43,7 +43,7 @@ def get_job_description(id):
   return render_template('job_page.html', job=job_disc)
 
 
-@app.route('/job/<id>/apply', methods=['post'])
+@app.route('/job/<id>/apply', method=['post'])
 def get_applicant_details(id):
   data = request.form
   return jsonify(data)
