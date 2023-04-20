@@ -1,7 +1,10 @@
 <h2>{{job.title}} Job Application Form</h2>
 <form action="/job/{{job.id}}/apply" method="post">
   <input class='mb-2' type='text' name='name' placeholder='Enter Your Name'><br>
-  <input class='mb-2' type='text' name='email-id' placeholder='Email Id'><br>
-  <input class='mb-2' type='text' name='linkedin-url' placeholder='Linkedin Id'><br>
+  <input class='mb-2' type='email' name='email_id' placeholder='Email Id'><br>
+  <input class='mb-2' type='url' name='linkedin_url' placeholder='Linkedin URL'><br>
+  <textarea class='mb-2' name='education' placeholder='Qualification'></textarea><br>
+  <textarea class='mb-2' name='experience' placeholder='Experience'></textarea><br>
+  <input class='mb-2' type='url' name='resume_url' placeholder='Resume URL'><br>
   <input class='mb-2' type='submit' value='Submit'>
 </form>

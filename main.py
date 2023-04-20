@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from database import get_data_from_db, load_job
+from database import get_data_from_db, load_job, insert_application_to_db
 
 app = Flask(__name__)
 
@@ -43,10 +43,12 @@ def get_job_description(id):
   return render_template('job_page.html', job=job_disc)
 
 
-@app.route('/job/<id>/apply', method=['post'])
+@app.route('/job/<id>/apply', methods=['post'])
 def get_applicant_details(id):
   data = request.form
-  return jsonify(data)
+  job = load_job(id)
+  insert_application_to_db(id, data)
+  return render_template('thank_you.html', application=data, job=job)
 
 
 if __name__ == "__main__":

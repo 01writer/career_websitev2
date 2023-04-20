@@ -31,3 +31,20 @@ def load_job(id):
     else:
       jobdis = row[0]._asdict()
       return jobdis
+
+
+def insert_application_to_db(job_id, data):
+  with engine.connect() as conn:
+    query = text(
+      'insert into applications(job_id, full_name, email, linkedin_url, education, experience, resume_url) values(:job_id, :full_name, :email, :linkedin_url, :education, :experience, :resume_url)'
+    )
+    conn.execute(
+      query, {
+        'job_id': job_id,
+        'full_name': data['name'],
+        'email': data['email_id'],
+        'linkedin_url': data['linkedin_url'],
+        'education': data['education'],
+        'experience': data['experience'],
+        'resume_url': data['resume_url']
+      })

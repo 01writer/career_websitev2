@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Submitted</title>
+    {% include 'headerfiles.html' %}
+    <style>
+      #banner{
+        width:100%;
+        height:360px;
+        object-fit:cover
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
+    <div class="container">
+    <h3 class="text-center mt-2 mb-4">Hello, {{application.name}}</h3>
+    <p>Your application form for <b>{{job.title}}</b> is submitted succesfully with following details:</p>
+      <h4>Name:</h4> <p>{{application.name}}</p>
+      <h4>Email:</h4> <p>{{application.email_id}}</p>
+      <h4>Linkedin URL:</h4> <p>{{application.linkedin_url}}</p>
+      <h4>Qualification:</h4> <p>{{application.education}}</p>
+      <h4>Experience:</h4> <p>{{application.experience}}</p>
+      <h4>Resume URL:</h4> <p>{{application.resume_url}}</p>
+ </div>
+      {% include 'footer.html' %}
+  </body>
+</html>
