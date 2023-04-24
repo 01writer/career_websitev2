@@ -1,10 +1,10 @@
  <div class="border-bottom row" style='padding-bottom:10px'>
-   <div class='col-8'>
+   <div class='col'>
   <h4 style="color:rgb(120,120,120); margin-bottom:5px;margin-top:20px">{{job['title']}} </h4>
   <div><b>Location: </b>{{job['location']}} </div>
   {% if job['salary'] != '' %}
   <div><b>Salary: </b>{{job['salary']}} </div>
   {% endif %}</div>
-   <div class='col-4 mt-4 text-right'>
+   <div class='col-md-4 col-lg-2 mt-4'>
    <a href="/jobs/{{job['id']}}" class="btn btn-primary">Apply Now</a>
 </div></div>
